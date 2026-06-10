@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>PhishGuard - Blocked</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: linear-gradient(135deg, #1e1e2f 0%, #2a1e3c 100%);
+      font-family: 'Segoe UI', 'Inter', system-ui;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .card {
+      background: rgba(20,20,40,0.9);
+      backdrop-filter: blur(12px);
+      border-radius: 48px;
+      padding: 40px;
+      max-width: 550px;
+      text-align: center;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .icon {
+      font-size: 80px;
+      margin-bottom: 20px;
+      animation: shake 0.5s ease-in-out;
+    }
+    @keyframes shake {
+      0%,100% { transform: translateX(0); }
+      25% { transform: translateX(-8px); }
+      75% { transform: translateX(8px); }
+    }
+    h1 {
+      font-size: 32px;
+      background: linear-gradient(135deg, #ff6b6b, #f44336);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 16px;
+    }
+    .url-box {
+      background: #00000040;
+      padding: 12px;
+      border-radius: 24px;
+      margin: 20px 0;
+      word-break: break-all;
+      font-family: monospace;
+      font-size: 14px;
+      color: #ffaa88;
+    }
+    .description {
+      color: #ccc;
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+    .footer {
+      margin-top: 30px;
+      font-size: 12px;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="icon">⚠️</div>
+    <h1>Phishing Site Blocked</h1>
+    <div class="url-box" id="blockedUrl"></div>
+    <div class="description">
+      PhishGuard's machine learning model identified this URL as a malicious phishing site.<br>
+      Your data and credentials are safe because access was prevented.
+    </div>
+    <div class="footer">
+      PhishGuard · Real-time AI Protection + URLhaus Threat Intel
+    </div>
+  </div>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const blockedUrl = urlParams.get('url') || 'Unknown URL';
+    document.getElementById('blockedUrl').innerText = blockedUrl;
+  </script>
+</body>
+</html>
