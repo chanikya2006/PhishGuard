@@ -12,7 +12,7 @@ import os
 from supabase import create_client, Client
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins=["http://localhost:3000", "chrome-extension://*"], supports_credentials=True)
 
 # ---------- Supabase Setup ----------
 SUPABASE_URL = os.environ.get("SUPABASE_URL")
