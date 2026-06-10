@@ -31,3 +31,7 @@ pydantic-core==2.33.2
 # --- Supabase auth dependency ---
 PyJWT==2.10.1
 cryptography==44.0.3
+
+#threat intelligence
+dnspython
+python-whois
