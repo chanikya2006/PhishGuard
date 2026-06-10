@@ -9,3 +9,4 @@ tldextract
 supabase
 dnspython
 python-whois
+xgboost
