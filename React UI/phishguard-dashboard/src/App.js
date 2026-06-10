@@ -4,7 +4,7 @@ import { PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, Tooltip, Legend, Resp
 import { ThreeDots } from 'react-loader-spinner';
 import './App.css';
 
-const API_BASE = 'http://127.0.0.1:8000';
+const API_BASE = process.env.REACT_APP_API_URL
 
 function App() {
   const [history, setHistory] = useState([]);
