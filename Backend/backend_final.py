@@ -42,7 +42,7 @@ def save_scan(url, ml_pred, ml_conf, urlhaus_bad, verdict, redirect_count, proba
     """Insert a scan record into Supabase."""
     data = {
         "url": url,
-        "timestamp": datetime.now().isoformat(),
+        "timestamp": datetime.now().isoformat() + "Z",
         "ml_prediction": int(ml_pred),
         "ml_confidence": ml_conf,
         "urlhaus_malicious": bool(urlhaus_bad),
