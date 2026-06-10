@@ -1,4 +1,4 @@
-const BACKEND = "http://127.0.0.1:8000/predict";
+const BACKEND = "https://phishguard-qtm4.onrender.com/predict";
 
 // List of domains to NEVER block (whitelist)
 const WHITELIST_DOMAINS = [
